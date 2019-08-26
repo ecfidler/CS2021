@@ -1,5 +1,5 @@
-__author__ = "Bart Simpson" # Your name
-__email__ = "bs123@mail.uc.edu" # Your email address
+__author__ = "Ethan Fidler" # Your name
+__email__ = "fidlerec@mail.uc.edu" # Your email address
 """Four Required questions for Lab 1"""
  
 ## Boolean Operators ##
@@ -8,13 +8,16 @@ def both_negative(x, y):
     """Returns True if and only if both x and y are negative.
  
     >>> both_negative(-1, 1)
-    False 
+    False
     >>> both_negative(1, 2)
     False
     >>> both_negative(-1, -2)
     True
     """
-    "*** YOUR CODE HERE ***"
+    if x < 0 and y < 0:
+      return True
+    else: 
+      return False
     
  
  
@@ -31,7 +34,9 @@ def not_factor (n):
     4
     3
     """
-    "*** YOUR CODE HERE ***"
+    for i in range(n,0,-1):
+      if n % i != 0:
+        print(i)
  
 # RQ3
 def lucas(n):
@@ -52,7 +57,10 @@ def lucas(n):
     >>> lucas(100)
     792070839848372253127
     """
-    "*** YOUR CODE HERE ***"
+    a, b = 2, 1
+    for _ in range(n):
+        a, b = b, a + b
+    return a
 
 #RQ4
 def gets_discount(p1, p2, p3):
@@ -67,6 +75,7 @@ def gets_discount(p1, p2, p3):
     >>> gets_discount(40, 7, 15)
     False
     """
+    return ((p1>=18) and ((p2<13) and (p3<13)))
  
 import doctest
 if __name__ == "__main__":
